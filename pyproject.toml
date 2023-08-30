@@ -1,0 +1,94 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project.urls]
+Source = "https://github.com/ReFirmLabs/binwalk"
+
+[project]
+name = "binwalk"
+authors = [
+    {name = "devttys0"},
+    {name = "Craig Heffner"},
+    {name = "Peter Eacmen"},
+    {name = "Martin Sundhaug"},
+    {name = "Dominic Chen"},
+    {name = "Michael Zimmermann"},
+    {name = "Diego Elio Pettenò"},
+    {name = "Stefan Viehböck"},
+    {name = "Tobias Schramm"},
+    {name = "Aarni Koskela"},
+    {name = "TODO need to add more"},
+]
+readme = "README.md"
+
+classifiers = [
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    # "Private :: Do Not Upload",
+]
+requires-python = ">=3.5"
+dependencies = [
+    "matplotlib",
+    "gnupg",
+    "tk",
+]
+
+
+# dynamic = ["version","description"]
+version = "2.3.3" 
+description = "Firmware Analysis Tool"
+
+# [project.entry-points."hciparse.bt"]
+# [project.entry-points."hciparse.android"]
+# [project.entry-points."hciparse.logparse"]
+# [project.entry-points."hciparse.examples.complexExample"]
+
+[project.scripts]
+binwalk = "binwalk.__main__:main"
+
+[project.optional-dependencies]
+test = [
+    "nose",
+    "coverage",
+]
+
+encypted-firmware-support = [
+    "pycryptodome",
+]
+
+# Requires platform specific OpenGL libraries
+# libqt4-opengl python3-opengl python3-pyqt4 python3-pyqt4.qtopengl
+# graph-generation-support = [
+#     "pyqtgraphs",
+#     "numpy",
+#     "scipy",
+# ]
+
+dissasembly-support = [
+    "capstone",
+]
+
+jffs2-filesystem-support = [
+    "cstruct",
+    "jefferson@git+https://github.com/sviehb/jefferson",
+]
+
+yaffs-filesystem-support = [
+    "yaffshiv@git+https://github.com/devttys0/yaffshiv",
+]
+
+# Require platform specific libraries
+# zlib1g-dev liblzma-dev liblzo2-dev
+# squashfs-nonstandard-filesystem-support = [
+#     "sasquatch@git+https://github.com/devttys0/sasquatch",
+# ]
+
+# liblzo2-dev python-lzo
+# ubifs-filesystem-support = [
+#     "ubi_reader@git+https://github.com/jrspruitt/ubi_reader",
+# ]
